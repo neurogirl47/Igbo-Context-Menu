@@ -17,3 +17,14 @@ https://swisnl.github.io/jQuery-contextMenu/demo/trigger-custom.html
 https://www.tiny.cloud/docs/ui-components/contextmenu/
 https://jsfiddle.net/softvar/6ny94/
 https://www.youtube.com/watch?v=YLx592Du9Sw
+
+# Google Cloud Info
+https://cloud.google.com/compute/docs/storing-retrieving-metadata
+https://cloud.google.com/appengine/docs/flexible/nodejs/configuring-your-app-with-app-yaml
+https://cloud.google.com/sdk/docs/quickstart-windows
+
+# Deploy Angular on Google cloud
+https://medium.com/@asanoop24/deploying-angular-6-app-on-google-app-engine-b6259d4c16c2
+
+# Deploy NodeJS on Google Cloud
+https://www.youtube.com/watch?v=fAUT1-MuxKc&t=337s
