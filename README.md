@@ -6,10 +6,10 @@
 - [x] Add .toLowerCase() so that it doesn't matter if the shift key is held when pressing 'a'
 - [x] Test that it is only triggered for 'a' keypresses and no other characters
 - [x] Add an array with all options of 'a' (tone marks and kpoms)
-- [] Create ul-menu in a DOM file
-- [] Create a method that populates the menu with the 'a' array
-- [] Add methods that display the populated menu whenever the 'a' key is pressed
-- [] Add methods to console.log a menu item is selected
+- [x] Create ul-menu in a DOM file
+- [x] Create a method that populates the menu with the 'a' array
+- [x] Add methods that display the populated menu whenever the 'a' key is pressed
+- [x] Add methods to console.log a menu item is selected
 - [] Add methods to append selected char into the DOM form at the spot where the key was pressed
 - [] Test that this function works
 - [] Add another key with it's array values into the json object
