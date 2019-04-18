@@ -34,12 +34,14 @@ function isVowel(userKey){
         var arr = menuobj[userKey.toLowerCase()];
     var menulist = document.getElementById("menulist");
     var li = document.createElement("li");
+    li.setAttribute("class", "menu-option");
     var textnode = "";
         for(var i=0; i<arr.length; i++){
             textnode = document.createTextNode(arr[i]);
             li.appendChild(textnode);
             menulist.appendChild(li);
             li = document.createElement("li");
+            li.setAttribute("class", "menu-option");
         }
     }else if(isVowel(false)){
         console.log("Not menu-worthy! You typed " + userKey);
@@ -47,5 +49,7 @@ function isVowel(userKey){
     li = "";
 }
 
-
+myform.addEventListener("contextmenu", e => {
+    e.preventDefault();
+  });
 myform.addEventListener("keypress", createmenu);
