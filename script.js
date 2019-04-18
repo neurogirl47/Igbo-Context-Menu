@@ -1,14 +1,9 @@
 'use strict'
 
 let myform = document.getElementById("myform");
+let menulist = document.getElementById("menulist");
 let menuobj = {
     'a' : ['a', 'á', 'à', 'ā', 'A', 'Á', 'À', 'Ā']
-}
-
-function getKey(event){
-    var mykey = event.key;
-    console.log('Your key was ' + mykey);
-    isVowel(mykey);
 }
 
 function isVowel(userKey){
@@ -21,4 +16,15 @@ function isVowel(userKey){
     }
 }
 
-myform.addEventListener("keypress", getKey);
+ function createmenu(event){
+    var userKey = event.key;
+    if(isVowel(userKey)){
+        console.log("here is your menu " + menuobj.a);
+    }else{
+        console.log("Not menu-worthy!");
+    }
+
+}
+
+
+myform.addEventListener("keypress", createmenu);
