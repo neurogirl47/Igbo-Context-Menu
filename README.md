@@ -1,5 +1,5 @@
 # TO DO'S
-- [] Create simple HTML form
+- [x] Create simple HTML form
 - [] Link javascript
 - [] Create json of one letter ('a')
 - [] Create method to check when ('a') is pressed that returns 'true' and/or console.log('a was pressed')
