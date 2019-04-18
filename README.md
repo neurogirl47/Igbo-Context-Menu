@@ -1,6 +1,6 @@
 # TO DO'S
 - [x] Create simple HTML form
-- [] Link javascript
+- [x] Link javascript
 - [] Create json of one letter ('a')
 - [] Create method to check when ('a') is pressed that returns 'true' and/or console.log('a was pressed')
 - [] Test that it is only triggered for 'a' keypresses and no other characters
