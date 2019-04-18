@@ -7,23 +7,36 @@ let menuobj = {
 }
 
 function isVowel(userKey){
-    if(userKey.toLowerCase() === 'a'){
-        console.log("You typed a");
-        return true;
-    }else{
-        console.log("You typed something else");
-        return false;
+    if(userKey){
+        if(userKey.toLowerCase() === 'a'){
+            console.log("You typed a");
+            return true;
+        }else{
+            console.log("You typed something else");
+            return false;
     }
+}else{
+    return false;
+}
 }
 
  function createmenu(event){
     var userKey = event.key;
+    var arr = menuobj.a;
+    var menulist = document.getElementById("menulist");
+    var li = document.createElement("li");
+    var textnode = "";
     if(isVowel(userKey)){
-        console.log("here is your menu " + menuobj.a);
-    }else{
-        console.log("Not menu-worthy!");
-    }
-
+        for(var i=0; i<arr.length; i++){
+            textnode = document.createTextNode(arr[i]);
+            li.appendChild(textnode);
+            menulist.appendChild(li);
+            li = document.createElement("li");
+        }
+    }else if(isVowel(false)){
+        console.log("Not menu-worthy! You typed " + userKey);
+     }
+    li = "";
 }
 
 
