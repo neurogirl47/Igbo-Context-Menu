@@ -1,10 +1,10 @@
 # TO DO'S
-[] Create simple HTML form
-[] Link javascript
-[] Create json of one letter ('a')
-[] Create method to check when ('a') is pressed that returns 'true' and/or console.log('a was pressed')
-[] Test that it is only triggered for 'a' keypresses and no other characters
-[] Add an array with all options of 'a' (tone marks and kpoms)
+- [] Create simple HTML form
+- [] Link javascript
+- [] Create json of one letter ('a')
+- [] Create method to check when ('a') is pressed that returns 'true' and/or console.log('a was pressed')
+- [] Test that it is only triggered for 'a' keypresses and no other characters
+- [] Add an array with all options of 'a' (tone marks and kpoms)
 [] Create ul-menu in a DOM file
 [] Create a method that populates the menu with the 'a' array
 [] Add methods that display the populated menu whenever the 'a' key is pressed
