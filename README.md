@@ -5,24 +5,24 @@
 - [] Create method to check when ('a') is pressed that returns 'true' and/or console.log('a was pressed')
 - [] Test that it is only triggered for 'a' keypresses and no other characters
 - [] Add an array with all options of 'a' (tone marks and kpoms)
-[] Create ul-menu in a DOM file
-[] Create a method that populates the menu with the 'a' array
-[] Add methods that display the populated menu whenever the 'a' key is pressed
-[] Add methods to console.log a menu item is selected
-[] Add methods to append selected char into the DOM form at the spot where the key was pressed
-[] Test that this function works
-[] Add another key with it's array values into the json object
-[] Add methods to check which key is pressed
-[] Create a method that checks if the key that was pressed was one of the 2 trigger keys
-  [] Compare the letter if it is one of the 2, return a menu
-  [] If it is not one of the 2, return the key
-    [] Continue (allow the char to be typed into the form)
-  [] If it is one of the 2 keys, check the json for the key 
-    [] Return the array associated with that key
-[] Add methods to populate the menu with the correct array values of the pressed key
-[] Add methods to display the correct menu
-[] Test both keys
-[] Add next keys incrementally and test each one
+- [] Create ul-menu in a DOM file
+- [] Create a method that populates the menu with the 'a' array
+- [] Add methods that display the populated menu whenever the 'a' key is pressed
+- [] Add methods to console.log a menu item is selected
+- [] Add methods to append selected char into the DOM form at the spot where the key was pressed
+- [] Test that this function works
+- [] Add another key with it's array values into the json object
+- [] Add methods to check which key is pressed
+- [] Create a method that checks if the key that was pressed was one of the 2 trigger keys
+-   [] Compare the letter if it is one of the 2, return a menu
+-   [] If it is not one of the 2, return the key
+-     [] Continue (allow the char to be typed into the form)
+-   [] If it is one of the 2 keys, check the json for the key 
+-     [] Return the array associated with that key
+- [] Add methods to populate the menu with the correct array values of the pressed key
+- [] Add methods to display the correct menu
+- [] Test both keys
+- [] Add next keys incrementally and test each one
 
 
 # Igbo-Context-Menu
