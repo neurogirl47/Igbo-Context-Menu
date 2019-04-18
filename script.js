@@ -2,7 +2,7 @@
 
 let myform = document.getElementById("myform");
 let menuobj = {
-    'a' : ['a', 'A']
+    'a' : ['a', 'á', 'à', 'ā', 'A', 'Á', 'À', 'Ā']
 }
 
 function getKey(event){
