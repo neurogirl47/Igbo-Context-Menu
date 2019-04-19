@@ -1,5 +1,6 @@
 'use strict'
-
+let textdiv = document.getElementById("textdiv");
+textdiv.contentEditable = true;
 let myform = document.getElementById("myform");
 let menulist = document.getElementById("menulist");
 let menuobj = {
@@ -31,6 +32,7 @@ function isVowel(userKey){
  function createmenu(event){
     var userKey = event.key;
     if(isVowel(userKey)){
+        event.preventDefault();
         var arr = menuobj[userKey.toLowerCase()];
     var menulist = document.getElementById("menulist");
     var li = document.createElement("li");
@@ -43,13 +45,36 @@ function isVowel(userKey){
             li = document.createElement("li");
             li.setAttribute("class", "menu-option");
         }
+        var selection = {
+            key: userKey.toLowerCase(),
+            keyarr: arr
+        }
+        getSelection(selection, menulist);
     }else if(isVowel(false)){
         console.log("Not menu-worthy! You typed " + userKey);
+        return false;
      }
     li = "";
+
 }
+
+function getSelection(smenuobj, menu){
+    var selection = smenuobj;
+    //var userkey = menu.userkey;
+    //var keyarr = menu.keyarr;
+    menu.addEventListener("click", function insertchar(event){
+        var text = event.target.innerText;
+        var tnode = document.createTextNode(text);
+        console.log("The " + selection.key + " array contains " + selection.keyarr);
+        console.log("You selected " + text);
+        textdiv.appendChild(tnode);
+    });
+}
+
+
 
 myform.addEventListener("contextmenu", e => {
     e.preventDefault();
   });
-myform.addEventListener("keypress", createmenu);
+
+  myform.addEventListener("keypress", createmenu);
