@@ -11,6 +11,11 @@
 - [x] Add methods that display the populated menu whenever the 'a' key is pressed
 - [x] Add methods to console.log a menu item is selected
 - [] Add methods to append selected char into the DOM form at the spot where the key was pressed
+-   [] Prevent default behavior on keypress
+-   [] Turn menu items into clickable links attached to js function
+-   [] onClick console.log char
+-   [] onClick insert char into form
+-   [] after insertion, remove char menu
 - [] Test that this function works
 - [] Add another key with it's array values into the json object
 - [] Add methods to check which key is pressed
