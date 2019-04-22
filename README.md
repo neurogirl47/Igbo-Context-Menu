@@ -1,3 +1,14 @@
+If you are interested in contributing to this project in any way, please email ndewo@igbolectures.com
+## Contributions can come in the form of:
+- financial
+- code commits
+- becoming an admin (responding to help questions)
+- creating a wiki
+- building open source apps with this code
+- building a community around this code
+- whatever you can think of... :-)
+
+
 # TO DO'S
 - [x] Create simple HTML form
 - [x] Link javascript
