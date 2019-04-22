@@ -60,6 +60,7 @@ function isVowel(userKey){
 
 function getSelection(smenuobj, menu){
     var selection = smenuobj;
+    var mymenu = menu;
     //var userkey = menu.userkey;
     //var keyarr = menu.keyarr;
     menu.addEventListener("click", function insertchar(event){
@@ -68,6 +69,9 @@ function getSelection(smenuobj, menu){
         console.log("The " + selection.key + " array contains " + selection.keyarr);
         console.log("You selected " + text);
         textdiv.appendChild(tnode);
+        while(mymenu.hasChildNodes()){
+            mymenu.removeChild(mymenu.firstChild);
+        }
     });
 }
 
