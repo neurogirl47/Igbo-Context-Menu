@@ -1,80 +1,62 @@
-'use strict'
-let textdiv = document.getElementById("textdiv");
-textdiv.contentEditable = true;
-let myform = document.getElementById("myform");
-let menulist = document.getElementById("menulist");
-let menuobj = {
-    'a' : ['a', 'á', 'à', 'ā', 'A', 'Á', 'À', 'Ā'],
-    'e' : ['e', 'é', 'è', 'ē', 'E', 'É', 'È', 'Ē'],
-    'i' : ['i', 'í', 'ì', 'ī', 'ị́', 'ị̀', 'I', 'Í', 'Ì', 'Ī', 'Ị́', 'Ị̀'],
-    'o' : ['o', 'ó', 'ò', 'ō', 'ọ́', 'ọ̀', 'O', 'Ó', 'Ò', 'Ō', 'Ọ́', 'Ọ̀'],
-    'u' : ['u', 'ú', 'ù', 'ū', 'ụ́', 'ụ̀', 'U', 'Ú', 'Ù', 'Ū', 'Ụ́', 'Ụ̀'],
-    'm' : ['m', 'ḿ', 'm̀', 'M', 'Ḿ', 'M̀'],
-    'n' : ['n', 'ń', 'ǹ', 'N', 'Ń', 'Ǹ']
-}
-let keyArr = ['a', 'e', 'i', 'o', 'u', 'm', 'n'];
+'use strict';
 
-function isVowel(userKey){
-    if(userKey){
-            for(var menukeys in menuobj){
-                if(menukeys === userKey.toLowerCase()){
-                    console.log("You typed " + userKey.toLowerCase());
-                    return true;
+(function (w, d) {
+    if (w.ICM) {
+        console.log('Igbo Context Menu already initialized... ')
+        return
+    }
+
+    const chars_of_interest = ['a', 'e', 'i', 'o', 'u', 'm', 'n']
+    const context_menu = d.createElement('section')
+
+    const create_item = (ch, extra='') => {
+        [extra, '&#768;', '&#772;'].forEach((diacritic) => {
+            if (diacritic && diacritic.length) {
+                if (ch === 'n' && extra === '&#775;' && extra !== diacritic) {
+                    return
                 }
+
+                const span = d.createElement('span')
+                span.innerHTML = `${ch}${extra === diacritic ? extra : extra + diacritic}`
+                span.className = 'icm-letter-' + ch
+
+                context_menu.appendChild(span)
             }
-        }else{
-            console.log("You typed something else");
-            return false;
+        })
+    }
+
+    chars_of_interest.forEach((ch) => {
+        switch (ch) {
+            case 'n':
+                create_item(ch, '&#775;')
+                break
+            case 'i':
+            case 'o':
+            case 'u':
+                create_item(ch, '&#803;')
+                break
         }
- }
 
+        create_item(ch)
+    })
 
- function createmenu(event){
-    var userKey = event.key;
-    if(isVowel(userKey)){
-        event.preventDefault();
-        var arr = menuobj[userKey.toLowerCase()];
-    var menulist = document.getElementById("menulist");
-    var li = document.createElement("li");
-    li.setAttribute("class", "menu-option");
-    var textnode = "";
-        for(var i=0; i<arr.length; i++){
-            textnode = document.createTextNode(arr[i]);
-            li.appendChild(textnode);
-            menulist.appendChild(li);
-            li = document.createElement("li");
-            li.setAttribute("class", "menu-option");
+    context_menu.style.display = 'none'
+    d.body.appendChild(context_menu)
+
+    w.ICM = function (node) {
+        const process = (e) => {
+            console.log('e', e)
+            // TODO
         }
-        var selection = {
-            key: userKey.toLowerCase(),
-            keyarr: arr
+
+        return {
+            enable: () => {
+                node.addEventListener('keyup', process)
+                node.dataset.igboContextMenu = 'initialized'
+            },
         }
-        getSelection(selection, menulist);
-    }else if(isVowel(false)){
-        console.log("Not menu-worthy! You typed " + userKey);
-        return false;
-     }
-    li = "";
+    }
 
-}
-
-function getSelection(smenuobj, menu){
-    var selection = smenuobj;
-    //var userkey = menu.userkey;
-    //var keyarr = menu.keyarr;
-    menu.addEventListener("click", function insertchar(event){
-        var text = event.target.innerText;
-        var tnode = document.createTextNode(text);
-        console.log("The " + selection.key + " array contains " + selection.keyarr);
-        console.log("You selected " + text);
-        textdiv.appendChild(tnode);
-    });
-}
-
-
-
-myform.addEventListener("contextmenu", e => {
-    e.preventDefault();
-  });
-
-  myform.addEventListener("keypress", createmenu);
+    /* enable context menu for selected elements */
+    d.querySelectorAll('[data-igbo-context-menu=init]').forEach(node => ICM(node).enable())
+})(window, document)
