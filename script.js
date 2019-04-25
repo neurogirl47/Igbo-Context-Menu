@@ -7,7 +7,7 @@
     }
 
     const chars_of_interest = ['a', 'e', 'i', 'o', 'u', 'm', 'n']
-    const context_menu = d.createElement('section')
+    const context_menu = d.createElement('span')
 
     const create_item = (ch, extra='') => {
         [extra, '&#768;', '&#772;'].forEach((diacritic) => {
@@ -41,7 +41,11 @@
     })
 
     context_menu.style.display = 'none'
+    context_menu.id = 'igbo-context-menu'
     d.body.appendChild(context_menu)
+
+    const show = () => context_menu.style.display = 'block'
+    const hide = () => context_menu.style.display = 'none'
 
     w.ICM = function (node) {
         const process = (e) => {
@@ -56,6 +60,9 @@
             },
         }
     }
+
+    ICM.show = show
+    ICM.hide = hide
 
     /* enable context menu for selected elements */
     d.querySelectorAll('[data-igbo-context-menu=init]').forEach(node => ICM(node).enable())
