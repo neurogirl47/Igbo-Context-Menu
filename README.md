@@ -54,3 +54,5 @@ On-going project to build an Igbo Context menu
 https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events
 
 https://dev.to/iamafro/how-to-create-a-custom-context-menu--5d7p
+
+https://stackoverflow.com/questions/14444938/append-text-to-textarea-with-javascript
