@@ -51,6 +51,7 @@ If you are interested in contributing to this project in any way, please email n
 
 # Igbo-Context-Menu
 On-going project to build an Igbo Context menu
+UPDATE - I want to switch to React and create the functionality to swtich between input styles (roman chars versus nsibidi versus custom emojis)
 
 # Resources
 https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events
